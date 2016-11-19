@@ -162,11 +162,6 @@ class EdifyGenerator(object):
     self.script.append('run_program("/sbin/busybox", "unzip", "/tmp/supersu/supersu.zip", "META-INF/com/google/android/*", "-d", "/tmp/supersu");')
     self.script.append('run_program("/sbin/busybox", "sh", "/tmp/supersu/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/supersu/supersu.zip");')
 
-  def FlashSuperUser(self):
-    self.script.append('package_extract_dir("su", "/tmp/su");')
-    self.script.append('run_program("/sbin/busybox", "unzip", "/tmp/su/superuser.zip", "META-INF/com/google/android/update-binary", "-d", "/tmp/su"); ')
-    self.script.append('run_program("/sbin/busybox", "sh", "/tmp/su/META-INF/com/google/android/update-binary", "3", "42", "/tmp/su/superuser.zip");')
-
   def ShowProgress(self, frac, dur):
     """Update the progress bar, advancing it over 'frac' over the next
     'dur' seconds.  'dur' may be zero to advance it via SetProgress
