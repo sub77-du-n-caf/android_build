@@ -1863,3 +1863,6 @@ done
 unset f
 
 addcompletions
+
+source fmsetup.sh
+
